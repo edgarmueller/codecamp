@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+</head>
+<body>
+<div class id="calculator">
+    <div class="container">
+        <div class="row">
+            <div id="display" class="col-md-12 display text-right">
+                0
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" id="expression">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed('(')"
+                        id="("
+                >
+                    (
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(')')"
+                        id=")"
+                >
+                    )
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-secondary btn-circle btn-xl"
+                        onclick="clearEntry()"
+                        id="CE"
+                >
+                    CE
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-secondary btn-circle btn-xl"
+                        onclick="allClear()"
+                        id="AC"
+                >
+                    AC
+                </button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="7"
+                        value="7"
+                >
+                    7
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button
+                        type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="8"
+                        value="8"
+                >
+                    8
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="9"
+                        value="9"
+                >
+                    9
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-info btn-circle btn-xl"
+                        onclick="buttonPressed('/')"
+                        id="/"
+                >
+                    ÷
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="4"
+                        value="4"
+                >
+                    4
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="5"
+                        value="5"
+                >
+                    5
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="6"
+                        value="6"
+                >
+                    6
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-info btn-circle btn-xl"
+                        onclick="buttonPressed('*')"
+                        id="*"
+                >
+                    ×
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="1"
+                        value="1"
+                >
+                    1
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="2"
+                        value="2"
+                >
+                    2
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="3"
+                        value="3"
+                >
+                    3
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-info btn-circle btn-xl"
+                        onclick="buttonPressed('-')"
+                        id="-"
+                >
+                    -
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed(this.value)"
+                        id="0"
+                        value="0"
+                >
+                    0
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-primary btn-circle btn-xl"
+                        onclick="buttonPressed('.')"
+                        id="."
+                >
+                    .
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-danger btn-circle btn-xl"
+                        onclick="buttonPressed('=')"
+                        id="="
+                >
+                    =
+                </button>
+            </div>
+            <div class="col-md-3">
+                <button type="button"
+                        class="btn btn-outline-info btn-circle btn-xl"
+                        onclick="buttonPressed('+')"
+                        id="+"
+                >
+                    +
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- TESTING -->
+<div id="mocha"></div>
+<script src="../node_modules/mocha/mocha.js"></script>
+<script src="../node_modules/chai/chai.js"></script>
+<script>
+  mocha.ui('bdd');
+  mocha.reporter('html');
+  var expect = chai.expect;
+</script>
+<script src="_calculator.test.js"></script>
+<script>
+  mocha.run();
+</script>
+<script src="calculator.js"></script>
+</body>
+</div>
+</body>
+</html>

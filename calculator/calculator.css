@@ -1,0 +1,43 @@
+#calculator {
+    margin: 0 auto;
+    max-width: 400px;
+    border: solid 1px darkgray;
+    border-radius: 0.5em;
+    padding: 1em;
+}
+
+.display {
+    font-size: 2em;
+}
+
+#expression {
+    font-size: 0.75em;
+    text-align: right;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 12px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+.btn-circle.btn-lg {
+    width: 50px;
+    height: 50px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 25px;
+}
+.btn-circle.btn-xl {
+    margin: 5px;
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px;
+}

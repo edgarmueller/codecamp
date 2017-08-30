@@ -1,0 +1,21 @@
+{
+  "name": "js-playground",
+  "version": "0.0.1",
+  "description": "A playground for JS stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-refs": "^3.0.0",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "ava": "^0.21.0",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "nyc": "^11.0.3"
+  }
+}
