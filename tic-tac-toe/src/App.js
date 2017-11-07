@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import logo from './logo.svg';
 import './App.css';
 import { GameField } from './GameField';
-import { resetField } from './actions';
+import { resetField, setPlayer } from './actions';
 
 class App extends Component {
   render() {
-    const { field, player, didEnd, draw, reset } = this.props;
+    const { field, player, didEnd, isStart, draw, reset, setStartPlayer } = this.props;
+    console.log('player', player);
 
     return (
       <div className="App">
@@ -19,7 +20,6 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
 
-        { player }
         <GameField field={field} />
         {
           draw ?
@@ -27,6 +27,15 @@ class App extends Component {
             didEnd && <p>{player} has won!</p>
         }
         { didEnd && <button onClick={reset}>Reset</button> }
+
+        {
+          isStart &&
+            <div>
+              <p>Pick who goes first</p>
+              <button onClick={() => setStartPlayer('X')}>ME!</button>
+              <button onClick={() => setStartPlayer('O')}>The OP CPU</button>
+            </div>
+        }
       </div>
     );
   }
@@ -34,15 +43,19 @@ class App extends Component {
 
 export const mapStateToProps = state => ({
   field: state.field,
-  player: state.symbol === 'X' ? 'Player 1' : 'Player 2',
+  player: state.symbol === 'X' ? 'CPU' : 'Hooman',
   didEnd: state.didEnd || state.isDraw,
+  isStart: state.symbol === undefined,
   draw: state.isDraw
 });
 
 export const mapDispatchToProps = dispatch => ({
   reset() {
     dispatch(resetField())
-  }
+  },
+  setStartPlayer(player) {
+    dispatch(setPlayer(player))
+  },
 })
 
 export default connect(

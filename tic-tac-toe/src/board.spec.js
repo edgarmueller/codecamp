@@ -1,7 +1,13 @@
 import { turn } from './actions';
-import app from './reducer';
-import { isOccuppiedAt  } from './reducer';
-import { createField, transpose, horizontal, vertical, diagonal } from './field';
+import app, { isOccuppiedAt  } from './reducer';
+import {
+  createField,
+  transpose,
+  horizontal,
+  vertical,
+  diagonal,
+  emptyCells
+} from './board';
 
 test('transpose', () => {
   const m = [
@@ -93,4 +99,16 @@ test('diagonal', () => {
       'o'
     )
   ).toBeTruthy();
+});
+
+test("empty cells", () => {
+    const board = [
+      ['x', undefined, undefined],
+      ['x', 'o', undefined],
+      ['o', 'x', 'x']
+    ];
+    const empty = emptyCells(board);
+    expect(empty).toContainEqual({x: 1, y: 0, symbol: undefined});
+    // expect(empty).toContain({x: 2, y: 0});
+    // expect(empty).toContain({x: 2, y: 1});
 });
